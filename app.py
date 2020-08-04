@@ -59,8 +59,8 @@ app.secret_key = "hello"
 
 @app.route('/',methods=["GET","POST"])
 def pan():
-	if request.method == 'POST':
-		if request.form['upload']=='Upload':
+	if request.method == "POST":
+		if request.form['upload']=="Upload":
 			upload = request.files['upload']
 			filename = secure_filename(upload.filename)
 			print(filename)
