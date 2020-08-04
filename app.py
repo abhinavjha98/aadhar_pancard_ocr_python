@@ -57,7 +57,7 @@ import pandas as pd
 app = Flask(__name__)
 app.secret_key = "hello"
 
-@app.route('/pan',methods=['GET','POST'])
+@app.route('/',methods=["GET","POST"])
 def pan():
 	if request.method == 'POST':
 		if request.form['upload']=='Upload':
@@ -90,4 +90,4 @@ def pan():
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
