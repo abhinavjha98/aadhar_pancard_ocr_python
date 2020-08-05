@@ -5,6 +5,11 @@ import pandas as pd
 from werkzeug.utils import secure_filename
 import pyrebase
 from firebase import firebase
+from flask import *
+import pandas as pd
+app = Flask(__name__)
+app.secret_key = "hello"
+
 
 config = {
 	"apiKey": "AIzaSyAYeR8EbGT8o0mkcqpiL6s7PfcCrT2_naA",
@@ -52,10 +57,7 @@ for text in texts:
 
 # print(df['description'][0])
 # print(data_text)
-from flask import *
-import pandas as pd
-app = Flask(__name__)
-app.secret_key = "hello"
+
 
 @app.route('/',methods=["GET","POST"])
 def pan():
