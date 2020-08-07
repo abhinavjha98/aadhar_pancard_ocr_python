@@ -60,12 +60,12 @@ for text in texts:
 
 @app.route('/',methods=["GET","POST"])
 def pan():
-    a = ""
-    if request.method == "POST":
-        if request.form['upload']=="Upload":
-            upload = request.files['upload']
-            filename = secure_filename(upload.filename)
-            print(filename)
+	a = ""
+	if request.method == "POST":
+		if request.form['upload']=="Upload":
+			upload = request.files['upload']
+			filename = secure_filename(upload.filename)
+			print(filename)
 			file_name = filename
 			image_path = f'/home/abhinavjha007/aadhar_pancard_ocr_python/{file_name}'
 
@@ -89,6 +89,7 @@ def pan():
 				a = df['description'][0]
 			result = FBConn.post('/pan_card/', a)
 	return render_template('pan.html',a=a)
+
 
 
 if __name__ == '__main__':

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+  <div class="col-lg-4">
+  <img src="https://www.talensetustaffing.com/images/talensetu-logo.png" style="width: 60%;">   
+  </div>
+   <div class="col-lg-4">
+  <p><b>Talensetu Services Private Limited</b></p>
+  <p>Human Resource Information System</p>
+  </div>
+</div>
+<form method="POST" enctype="multipart/form-data">
+  <div class="form-row">
+    <div class="form-group col-md-12 col-sm-6">
+      <label for="inputEmail4">Company Name कंपनीचे नाव</label>
+      <input type="text" name="cname" class="form-control" id="inputEmail4" placeholder="Company Name">
+    </div>
+  </div>
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Employee No. कर्मचारी संख्या।</label>
+      <input type = "text" name="emp" class="form-control" id="inputPassword4" placeholder="Employee No." >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Joining Date नयुची तारीख</label>
+      <input type = "date" name="joining_date" class="form-control" id="inputPassword4" placeholder="Joining Date">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-12 col-sm-6">
+      <label for="inputEmail4">Full Name As per Aadhar पूण नाव आधार काड माणे</label>
+      <input type="text" name="full_name" class="form-control" id="inputEmail4" placeholder="Full name">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Date of Birth As per Aadhar Card जतारीख आधार काड 􀅮माणे</label>
+      <input type = "date" name="dob" class="form-control" id="inputPassword4" placeholder="DOB" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Gender लंग</label>
+      <input type = "text" name="gender" class="form-control"  id="inputPassword4" placeholder="Gender">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Marital Status वैवािहक 􀄰􀌾थती</label>
+      <input type = "text" name="martial_status" class="form-control" id="inputPassword4" placeholder="Marital Status" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Marriage Date</label>
+      <input type = "date" name ="marriage_date" class="form-control" id="inputPassword4" placeholder="Marriage Date">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Passport No.</label>
+      <input type = "text" name="passport" class="form-control" id="inputPassword4" placeholder="Marital Status" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Passport Expiry Date</label>
+      <input type = "date"  name="passport_date"  class="form-control" id="inputPassword4" placeholder="Passport Expiry Date">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">PAN</label>
+      <input type = "text" name="PAN" class="form-control" id="inputPassword4" placeholder="PAN" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Name as per PAN Card</label>
+      <input type = "text" name="pan_name" class="form-control" id="inputPassword4" placeholder="Name as per PAN Card">
+    </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Aadhar No.</label>
+      <input type = "text" name="aadhar" class="form-control" id="inputPassword4" placeholder="Aadhar No." >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Name as per Aadhar Card</label>
+      <input type = "text" name="aadhar_name" class="form-control"  id="inputPassword4" placeholder="Name as per Aadhar Card">
+    </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Mobile No.</label>
+      <input type = "text" name="mobile" class="form-control" id="inputPassword4" placeholder="Mobile No." >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Email ID</label>
+      <input type = "text" name="email" class="form-control" id="inputPassword4" placeholder="Email ID">
+    </div>
+</div>
+
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Emergency Contact Details</label>
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Contact Person Name & Relation</label>
+      <input type = "text" name="contact_person" class="form-control" id="inputPassword4" placeholder="Contact Person Name & Relation" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Contact Person No.</label>
+      <input type = "text" name="contact_person_no"class="form-control" id="inputPassword4" placeholder="Contact Person No.">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Father's Name</label>
+      <input type = "text" name="father_name" class="form-control"  id="inputPassword4" placeholder="Father's Name" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Father's Birth Date/Age</label>
+      <input type = "date" name="father_date" class="form-control" id="inputPassword4" placeholder="Father's Birth Date/Age">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Mother’s Name</label>
+      <input type = "text" name="mother_name"class="form-control" id="inputPassword4" placeholder="Mother’s Name" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Mother's Birth Date/Age</label>
+      <input type = "date" class="form-control" name="mother_date" id="inputPassword4" placeholder="Mother's Birth Date/Age">
+    </div>
+</div>
+
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" name="address" class="form-control"  id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6 col-sm-6">
+      <label for="inputCity">City</label>
+      <input type="text" name="city" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4 col-sm-4">
+      <label for="inputState">State</label>
+      <input type="text" name="state" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" name="zip" class="form-control" id="inputZip">
+    </div>
+  </div>
+
+    <div class="form-group">
+    <label for="inputAddress">Permanent Address as per Aadhar:</label>
+    <input type="text" class="form-control" name="permanent_address" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6 col-sm-6">
+      <label for="inputCity">City</label>
+      <input type="text" name="pcity" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4 col-sm-4">
+      <label for="inputState">State</label>
+      <input type="text" name="pstate" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" name="pzip" class="form-control" id="inputZip">
+    </div>
+  </div>
+
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Bank Account Information</label>
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Bank Name</label>
+      <input type = "text" name="bank_name" class="form-control" id="inputPassword4" placeholder="Bank Name" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Branch Name</label>
+      <input type = "text" name="branch" class="form-control" id="inputPassword4" placeholder="Mother's Birth Date/Age">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Bank Account Number</label>
+      <input type = "text" name="acc" class="form-control" id="inputPassword4" placeholder="Bank Account Number" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">IFSC Code</label>
+      <input type = "text" name="IFSC" class="form-control" id="inputPassword4" placeholder="IFSC Code">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Old PF UAN No.</label>
+      <input type = "text" name="OLD_PF" class="form-control" id="inputPassword4" placeholder="Mother’s Name" >
+    </div>
+ 
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Old ESIC No.</label>
+      <input type = "text" name="OLD_ESIC" class="form-control" id="inputPassword4" placeholder="Mother's Birth Date/Age">
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
+      <label for="inputPassword4">Educational Qualification</label>
+    </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-3 col-sm-6">
+      <label for="inputPassword4">Below SSC</label>
+      <input type = "text" name="bssc" class="form-control" id="inputPassword4" placeholder="Below SSC" >
+    </div>
+ 
+  <div class="form-group col-md-3 col-sm-6">
+      <label for="inputPassword4">SSC</label>
+      <input type = "text" name="ssc" class="form-control" id="inputPassword4" placeholder="SSC">
+    </div>
+
+    <div class="form-group col-md-3 col-sm-6">
+      <label for="inputPassword4">HSC</label>
+      <input type = "text"name="hsc" class="form-control" id="inputPassword4" placeholder="HSC" >
+    </div>
+ 
+  <div class="form-group col-md-3 col-sm-6">
+      <label for="inputPassword4">ITI</label>
+      <input type = "text" name="ITI"class="form-control" id="inputPassword4" placeholder="ITI">
+    </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-3 col-sm-6">
+      <label for="inputPassword4">Diploma</label>
+      <input type = "text"name="diploma" class="form-control" id="inputPassword4" placeholder="Diploma" >
+    </div>
+ 
+  <div class="form-group col-md-3 col-sm-6">
+      <label for="inputPassword4">Graduate</label>
+      <input type = "text"name="graduate" class="form-control" id="inputPassword4" placeholder="Graduate">
+    </div>
+
+    <div class="form-group col-md-3 col-sm-6">
+      <label for="inputPassword4">Post Grad</label>
+      <input type = "text" name="post_graduate" class="form-control" id="inputPassword4" placeholder="Post Grad" >
+    </div>
+ 
+  <div class="form-group col-md-3 col-sm-6">
+      <label for="inputPassword4">Other</label>
+      <input type = "text" name="other"class="form-control" id="inputPassword4" placeholder="Other">
+    </div>
+</div>
+
+
+<div class="form-row">
+  <div class="form-group col-md-4 col-sm-6">
+      <label for="inputPassword4">Documents Attached</label>
+  </div>
+   
+</div>
+<div class="form-group col-md-8 col-sm-6">
+      <label for="inputPassword4">Aadhar card Front</label>
+      <input type="file" class="custom-file" name="files" style="width: 50%">
+  </div>
+  <div class="form-group col-md-8 col-sm-6">
+      <label for="inputPassword4">Aadhar card back</label>
+      <input type="file" class="custom-file" name="fil" style="width: 50%">
+  </div>
+  <div class="form-group col-md-8 col-sm-6">
+      <label for="inputPassword4">Proof of birth</label>
+      <input type="file" class="custom-file" name="filess" style="width: 50%">
+  </div>
+  <div class="form-group col-md-8 col-sm-6">
+      <label for="inputPassword4">Scanned cheque.</label>
+      <input type="file" class="custom-file" name="uploadsss" style="width: 50%">
+  </div>
+<div class="form-row">
+  <div class="form-group col-md-4 col-sm-6">
+      <label for="inputPassword4">Declaration</label>
+  </div>
+   <div class="form-group col-md-8 col-sm-6">
+      <label for="inputPassword4">All above information given by me is True to the best of my knowledge</label>
+  </div>
+</div>
+  <button type="submit" name="upload" value="Upload" class="btn btn-primary">Complete</button>
+</form>
+
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
