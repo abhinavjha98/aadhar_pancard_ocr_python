@@ -54,16 +54,19 @@
 <form method="POST" enctype="multipart/form-data">
   <div class="form-row">
     <div class="form-group col-md-12 col-sm-6">
-      <label for="inputEmail4">Company Name कंपनीचे नाव</label>
-      <input type="text" name="cname" class="form-control" id="inputEmail4" placeholder="Company Name">
+      <label for="inputEmail4">Client name ग्राहकांचे नाव *</label>
+      <input type="text" required="" name="cname" class="form-control" id="inputEmail4" placeholder="Client name">
     </div>
   </div>
 <div class="form-row">
-  <div class="form-group col-md-6 col-sm-6">
+  <div class="form-group col-md-3 col-sm-3">
       <label for="inputPassword4">Employee No. कर्मचारी संख्या।</label>
-      <input type = "text" name="emp" class="form-control" id="inputPassword4" placeholder="Employee No." >
+      <input type = "text" name="emp" required="" class="form-control" id="inputPassword4" placeholder="Employee No." >
     </div>
- 
+ <div class="form-group col-md-3 col-sm-3">
+      <label for="inputPassword4">Talentsetu ID टॅलेन्सेटू आयडी</label>
+      <input type = "text" name="talent"  required=""class="form-control" id="inputPassword4" placeholder="Talentsetu ID" >
+    </div>
   <div class="form-group col-md-6 col-sm-6">
       <label for="inputPassword4">Joining Date नयुची तारीख</label>
       <input type = "date" name="joining_date" class="form-control" id="inputPassword4" placeholder="Joining Date">
@@ -72,77 +75,76 @@
 
 <div class="form-row">
     <div class="form-group col-md-12 col-sm-6">
-      <label for="inputEmail4">Full Name As per Aadhar पूण नाव आधार काड माणे</label>
-      <input type="text" name="full_name" class="form-control" id="inputEmail4" placeholder="Full name">
+      <label for="inputEmail4">Full Name As per Aadhar आधार नुसार पूर्ण नाव</label>
+      <input type="text" name="full_name" required="" class="form-control" id="inputEmail4" placeholder="Full name">
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Date of Birth As per Aadhar Card जतारीख आधार काड 􀅮माणे</label>
-      <input type = "date" name="dob" class="form-control" id="inputPassword4" placeholder="DOB" >
+      <label for="inputPassword4">Date of Birth As per Aadhar Card आधार कार्डनुसार जन्मतारीख</label>
+      <input type = "date" name="dob" required="" class="form-control" id="inputPassword4" placeholder="DOB" >
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Gender लंग</label>
-      <input type = "text" name="gender" class="form-control"  id="inputPassword4" placeholder="Gender">
+      <label for="inputPassword4">Gender लिंग</label>
+       <select name="gender" required="" class="form-control" id="exampleFormControlSelect1">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Marital Status वैवािहक 􀄰􀌾थती</label>
-      <input type = "text" name="martial_status" class="form-control" id="inputPassword4" placeholder="Marital Status" >
+      <label for="inputPassword4">Marital Status वैवाहिक स्थिती</label>
+      <select name="martial_status" class="form-control" id="exampleFormControlSelect1">
+      <option value="Single">Single</option>
+    <option value="Married">Married</option>
+    <option value="Widowed">Widowed</option>
+    <option value="Separated">Separated</option>
+    <option value="Divorced">Divorced</option>
+  </select>
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Marriage Date</label>
+      <label for="inputPassword4">Marriage Date लग्नाची तारीख</label>
       <input type = "date" name ="marriage_date" class="form-control" id="inputPassword4" placeholder="Marriage Date">
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Passport No.</label>
+      <label for="inputPassword4">Passport No. पासपोर्ट क्रमांक</label>
       <input type = "text" name="passport" class="form-control" id="inputPassword4" placeholder="Marital Status" >
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Passport Expiry Date</label>
+      <label for="inputPassword4">Passport Expiry Date पासपोर्टची समाप्ती तारीख</label>
       <input type = "date"  name="passport_date"  class="form-control" id="inputPassword4" placeholder="Passport Expiry Date">
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">PAN</label>
+      <label for="inputPassword4">PAN No. पॅन क्रमांक</label>
       <input type = "text" name="PAN" class="form-control" id="inputPassword4" placeholder="PAN" >
     </div>
- 
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Name as per PAN Card</label>
-      <input type = "text" name="pan_name" class="form-control" id="inputPassword4" placeholder="Name as per PAN Card">
+      <label for="inputPassword4">Aadhar No. आधार क्रमांक</label>
+      <input type = "text" name="aadhar" required="" class="form-control" id="inputPassword4" placeholder="Aadhar No." >
     </div>
+ 
 </div>
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Aadhar No.</label>
-      <input type = "text" name="aadhar" class="form-control" id="inputPassword4" placeholder="Aadhar No." >
+      <label for="inputPassword4">Mobile No. मोबाईल क्रमांक</label>
+      <input type = "text" name="mobile" required="" class="form-control" id="inputPassword4" placeholder="Mobile No." >
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Name as per Aadhar Card</label>
-      <input type = "text" name="aadhar_name" class="form-control"  id="inputPassword4" placeholder="Name as per Aadhar Card">
-    </div>
-</div>
-<div class="form-row">
-  <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Mobile No.</label>
-      <input type = "text" name="mobile" class="form-control" id="inputPassword4" placeholder="Mobile No." >
-    </div>
- 
-  <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Email ID</label>
+      <label for="inputPassword4">Email ID ई - मेल आयडी</label>
       <input type = "text" name="email" class="form-control" id="inputPassword4" placeholder="Email ID">
     </div>
 </div>
@@ -150,197 +152,266 @@
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Emergency Contact Details</label>
+      <label for="inputPassword4">Emergency Contact Details आपत्कालीन संपर्क तपशील</label>
+    </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-4 col-sm-4">
+      <label for="inputPassword4">Contact Person name संपर्क व्यक्तीचे नाव</label>
+      <input type = "text" name="contact_person" required="" class="form-control" id="inputPassword4" placeholder="Contact Person Name" >
+    </div>
+ <div class="form-group col-md-4 col-sm-4">
+      <label for="inputPassword4">Contact Person Relation व्यक्तीशी संपर्क साधा</label>
+      <input type = "text" name="contact_person_relation" required="" class="form-control" id="inputPassword4" placeholder="Contact Person Relation" >
+    </div>
+  <div class="form-group col-md-4 col-sm-4">
+      <label for="inputPassword4">Contact Person No. संपर्क क्रमांक</label>
+      <input type = "text" name="contact_person_no" required="" class="form-control" id="inputPassword4" placeholder="Contact Person No.">
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Contact Person Name & Relation</label>
-      <input type = "text" name="contact_person" class="form-control" id="inputPassword4" placeholder="Contact Person Name & Relation" >
-    </div>
- 
-  <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Contact Person No.</label>
-      <input type = "text" name="contact_person_no"class="form-control" id="inputPassword4" placeholder="Contact Person No.">
-    </div>
-</div>
-
-<div class="form-row">
-  <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Father's Name</label>
+      <label for="inputPassword4">Father's Name वडिलांचे नाव</label>
       <input type = "text" name="father_name" class="form-control"  id="inputPassword4" placeholder="Father's Name" >
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Father's Birth Date/Age</label>
+      <label for="inputPassword4">Father's Birth Date/Age वडिलांची जन्मतारीख / वय</label>
       <input type = "date" name="father_date" class="form-control" id="inputPassword4" placeholder="Father's Birth Date/Age">
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Mother’s Name</label>
+      <label for="inputPassword4">Mother’s Name आईचे नाव</label>
       <input type = "text" name="mother_name"class="form-control" id="inputPassword4" placeholder="Mother’s Name" >
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Mother's Birth Date/Age</label>
+      <label for="inputPassword4">Mother's Birth Date/Age आईची जन्मतारीख / वय</label>
       <input type = "date" class="form-control" name="mother_date" id="inputPassword4" placeholder="Mother's Birth Date/Age">
     </div>
 </div>
 
   <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" name="address" class="form-control"  id="inputAddress" placeholder="1234 Main St">
+    <label for="inputAddress">Temporary Address तात्पुरता पत्ता</label>
+    <input type="text" name="address" required="" class="form-control"  id="inputAddress" placeholder="1234 Main St">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6 col-sm-6">
-      <label for="inputCity">City</label>
-      <input type="text" name="city" class="form-control" id="inputCity">
+      <label for="inputCity">City शहर</label>
+      <input type="text" name="city" required="" class="form-control" id="inputCity">
     </div>
     <div class="form-group col-md-4 col-sm-4">
-      <label for="inputState">State</label>
-      <input type="text" name="state" class="form-control" id="inputCity">
+      <label for="inputState">State राज्य</label>
+     <select name="state" id="state" required="" class="form-control">
+        <option value="Maharashtra">Maharashtra</option>
+         <option value="Karnataka">Karnataka</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+           <option value="Gujarat">Gujarat</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="West Bengal">West Bengal</option>
+        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+        <option value="Daman and Diu">Daman and Diu</option>
+       
+        <option value="Lakshadweep">Lakshadweep</option>
+        <option value="Puducherry">Puducherry</option>
+        <option value="Goa">Goa</option>
+       
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+        <option value="Jharkhand">Jharkhand</option>
+       
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+       
+        
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        
+</select>
     </div>
     <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" name="zip" class="form-control" id="inputZip">
+      <label for="inputZip">Zip झिप</label>
+      <input type="text" required="" name="zip" class="form-control" id="inputZip">
     </div>
   </div>
 
     <div class="form-group">
-    <label for="inputAddress">Permanent Address as per Aadhar:</label>
-    <input type="text" class="form-control" name="permanent_address" id="inputAddress" placeholder="1234 Main St">
+    <label for="inputAddress">Permanent Address as per Aadhar: आधार नुसार कायम पत्ता:</label>
+    <input type="text" class="form-control" required="" name="permanent_address" id="inputAddress" placeholder="1234 Main St">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6 col-sm-6">
-      <label for="inputCity">City</label>
-      <input type="text" name="pcity" class="form-control" id="inputCity">
+      <label for="inputCity">City शहर</label>
+      <input type="text" name="pcity" required="" class="form-control" id="inputCity">
     </div>
     <div class="form-group col-md-4 col-sm-4">
-      <label for="inputState">State</label>
-      <input type="text" name="pstate" class="form-control" id="inputCity">
+      <label for="inputState">State राज्य</label>
+      <select name="pstate" id="state" class="form-control">
+        <option value="Maharashtra">Maharashtra</option>
+         <option value="Karnataka">Karnataka</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+           <option value="Gujarat">Gujarat</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="West Bengal">West Bengal</option>
+        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+        <option value="Daman and Diu">Daman and Diu</option>
+       
+        <option value="Lakshadweep">Lakshadweep</option>
+        <option value="Puducherry">Puducherry</option>
+        <option value="Goa">Goa</option>
+       
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+        <option value="Jharkhand">Jharkhand</option>
+       
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+       
+        
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        
+</select>
     </div>
     <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" name="pzip" class="form-control" id="inputZip">
+      <label for="inputZip">Zip झिप</label>
+      <input type="text" name="pzip" required="" class="form-control" id="inputZip">
     </div>
   </div>
 
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Bank Account Information</label>
+      <label for="inputPassword4">Bank Account Information बँक खाते माहिती</label>
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Bank Name</label>
-      <input type = "text" name="bank_name" class="form-control" id="inputPassword4" placeholder="Bank Name" >
+      <label for="inputPassword4">Bank Name बँकेचे नाव</label>
+      <input type = "text" name="bank_name" required="" class="form-control" id="inputPassword4" placeholder="Bank Name" >
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Branch Name</label>
-      <input type = "text" name="branch" class="form-control" id="inputPassword4" placeholder="Mother's Birth Date/Age">
+      <label for="inputPassword4">Branch Name शाखेचे नाव</label>
+      <input type = "text" name="branch" required="" class="form-control" id="inputPassword4" placeholder="Branch Name">
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Bank Account Number</label>
-      <input type = "text" name="acc" class="form-control" id="inputPassword4" placeholder="Bank Account Number" >
+      <label for="inputPassword4">Bank Account Number बँक खाते क्रमांक</label>
+      <input type = "text" name="acc" required="" class="form-control" id="inputPassword4" placeholder="Bank Account Number" >
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">IFSC Code</label>
-      <input type = "text" name="IFSC" class="form-control" id="inputPassword4" placeholder="IFSC Code">
+      <label for="inputPassword4">IFSC Code आयएफएससी कोड</label>
+      <input type = "text" name="IFSC" required="" class="form-control" id="inputPassword4" placeholder="IFSC Code">
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Old PF UAN No.</label>
-      <input type = "text" name="OLD_PF" class="form-control" id="inputPassword4" placeholder="Mother’s Name" >
+      <label for="inputPassword4">Old PF UAN No. जुने पीएफ यूएएन नं.</label>
+      <input type = "text" name="OLD_PF" class="form-control" id="inputPassword4" placeholder="Old PF UAN No." >
     </div>
  
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Old ESIC No.</label>
-      <input type = "text" name="OLD_ESIC" class="form-control" id="inputPassword4" placeholder="Mother's Birth Date/Age">
+      <label for="inputPassword4">Old ESIC No. जुना ESIC क्र.</label>
+      <input type = "text" name="OLD_ESIC" class="form-control" id="inputPassword4" placeholder="OLD ESIC No.">
     </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 col-sm-6">
-      <label for="inputPassword4">Educational Qualification</label>
-    </div>
+      <label for="inputPassword4">Educational Qualification शैक्षणिक पात्रता</label>
+       <select name="martial_status" class="form-control" id="exampleFormControlSelect1" required="">
+      <option value="Below 10th">Below 10th</option>
+    <option value="10th">10th</option>
+    <option value="Below 12th">Below 12th</option>
+    <option value="12th">12th</option>
+    <option value="ITI">ITI</option>
+    <option value="Diploma">Diploma</option>
+    <option value="Graduate">Graduate</option>
+    <option value="BE">BE</option>
+    <option value="Post graduate">Post graduate</option>
+    <option value="Other">Other</option>
+</select>
 </div>
-<div class="form-row">
-  <div class="form-group col-md-3 col-sm-6">
-      <label for="inputPassword4">Below SSC</label>
-      <input type = "text" name="bssc" class="form-control" id="inputPassword4" placeholder="Below SSC" >
-    </div>
- 
-  <div class="form-group col-md-3 col-sm-6">
-      <label for="inputPassword4">SSC</label>
-      <input type = "text" name="ssc" class="form-control" id="inputPassword4" placeholder="SSC">
-    </div>
-
-    <div class="form-group col-md-3 col-sm-6">
-      <label for="inputPassword4">HSC</label>
-      <input type = "text"name="hsc" class="form-control" id="inputPassword4" placeholder="HSC" >
-    </div>
- 
-  <div class="form-group col-md-3 col-sm-6">
-      <label for="inputPassword4">ITI</label>
-      <input type = "text" name="ITI"class="form-control" id="inputPassword4" placeholder="ITI">
-    </div>
-</div>
-<div class="form-row">
-  <div class="form-group col-md-3 col-sm-6">
-      <label for="inputPassword4">Diploma</label>
-      <input type = "text"name="diploma" class="form-control" id="inputPassword4" placeholder="Diploma" >
-    </div>
- 
-  <div class="form-group col-md-3 col-sm-6">
-      <label for="inputPassword4">Graduate</label>
-      <input type = "text"name="graduate" class="form-control" id="inputPassword4" placeholder="Graduate">
-    </div>
-
-    <div class="form-group col-md-3 col-sm-6">
-      <label for="inputPassword4">Post Grad</label>
-      <input type = "text" name="post_graduate" class="form-control" id="inputPassword4" placeholder="Post Grad" >
-    </div>
- 
-  <div class="form-group col-md-3 col-sm-6">
-      <label for="inputPassword4">Other</label>
-      <input type = "text" name="other"class="form-control" id="inputPassword4" placeholder="Other">
-    </div>
 </div>
 
 
 <div class="form-row">
   <div class="form-group col-md-4 col-sm-6">
-      <label for="inputPassword4">Documents Attached</label>
+      <label for="inputPassword4">Documents Attached कागदपत्रे जोडली</label>
   </div>
    
 </div>
-<div class="form-group col-md-8 col-sm-6">
+<div class="form-row">
+<div class="form-group col-md-6 col-sm-6">
       <label for="inputPassword4">Aadhar card Front</label>
-      <input type="file" class="custom-file" name="files" style="width: 50%">
+      <input type="file"required="" class="custom-file" name="files" style="width: 50%">
   </div>
-  <div class="form-group col-md-8 col-sm-6">
+  <div class="form-group col-md-6 col-sm-6">
       <label for="inputPassword4">Aadhar card back</label>
-      <input type="file" class="custom-file" name="fil" style="width: 50%">
+      <input type="file"required="" class="custom-file" name="fil" style="width: 50%">
   </div>
-  <div class="form-group col-md-8 col-sm-6">
+</div>
+<div class="form-row">
+  <div class="form-group col-md-6 col-sm-6">
       <label for="inputPassword4">Proof of birth</label>
-      <input type="file" class="custom-file" name="filess" style="width: 50%">
+      <input type="file"required="" class="custom-file" name="filess" style="width: 50%">
   </div>
-  <div class="form-group col-md-8 col-sm-6">
+  <div class="form-group col-md-6 col-sm-6">
       <label for="inputPassword4">Scanned cheque.</label>
-      <input type="file" class="custom-file" name="uploadsss" style="width: 50%">
+      <input type="file"required="" class="custom-file" name="uploadsss" style="width: 50%">
+  </div>
+</div>
+  <div class="form-group col-md-8 col-sm-6">
+      <label for="inputPassword4">Photo of Degree</label>
+      <input type="file" required="" class="custom-file" name="uploadssss" style="width: 50%">
   </div>
 <div class="form-row">
   <div class="form-group col-md-4 col-sm-6">
