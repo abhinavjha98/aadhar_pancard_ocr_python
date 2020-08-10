@@ -1,6 +1,6 @@
 import os,io
-from google.cloud import vision
-from google.cloud.vision import types
+# from google.cloud import vision
+# from google.cloud.vision import types
 import pandas as pd
 from werkzeug.utils import secure_filename
 import pyrebase
@@ -29,28 +29,28 @@ FBConn = firebase.FirebaseApplication('https://sih2020-59356.firebaseio.com')
 
 firebase = pyrebase.initialize_app(config)
 storage = firebase.storage()
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'ServiceAccount.json'
-client = vision.ImageAnnotatorClient()
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'ServiceAccount.json'
+# client = vision.ImageAnnotatorClient()
 
-file_name = 'pan.jpeg'
-image_path = f'E:\PROJECT\\aadhar_OCR\{file_name}'
+# file_name = 'pan.jpeg'
+# image_path = f'E:\PROJECT\\aadhar_OCR\{file_name}'
 
-with io.open(image_path, 'rb') as image_file:
-		content = image_file.read()
+# with io.open(image_path, 'rb') as image_file:
+# 		content = image_file.read()
 
-image = vision.types.Image(content=content)
-response = client.text_detection(image=image,  image_context={"language_hints": ["en"]})
-texts = response.text_annotations
-df = pd.DataFrame(columns=['locale', 'description'])
+# image = vision.types.Image(content=content)
+# response = client.text_detection(image=image,  image_context={"language_hints": ["en"]})
+# texts = response.text_annotations
+# df = pd.DataFrame(columns=['locale', 'description'])
 
-for text in texts:
-		df = df.append(
-					dict(
-				locale=text.locale,
-				description=text.description
-				),
- 				ignore_index=True
-		)
+# for text in texts:
+# 		df = df.append(
+# 					dict(
+# 				locale=text.locale,
+# 				description=text.description
+# 				),
+#  				ignore_index=True
+# 		)
 # data_text=[]
 # for i in df:
 # 	data_text.append(df[i][0])
@@ -355,23 +355,43 @@ def info():
 				if (word.find(data_a[0]) != -1): 
 					data_url = storage.child(file.name).get_url(None)
 					cheque_url = data_url
+
+			upl = request.files['upl']
+			spl = upl.filename
+			spll = spl.split(".")
+			upl.filenamesss=str(da)+"degree"+"."+spll[1]
+			filenamesss = secure_filename(upl.filenamesss)
+			print(filenamesss)
+			upl.save(os.path.join(app.config['uploads'], filenamesss))
+			storage.child(filenamesss).put(filenamesss)
+			# storage = firebase.storage()
+			data_a = filenamesss.split(".")
+			files = storage.list_files()
+			for file in files:
+				word=storage.child(file.name).get_url(None)
+				if (word.find(data_a[0]) != -1): 
+					data_url = storage.child(file.name).get_url(None)
+					degree_url = data_url
+
 			c_name = request.form['cname']
 			emp_no = request.form['emp']
+			talent = request.form['talent']
 			join_date = request.form['joining_date']
 			full_name_adhar = request.form['full_name']
 			dob_adhar = request.form['dob']
-			gender = request.form['gender']
-			martial_status = request.form['martial_status']
+			gender = request.form.get('gender')
+			martial_status = request.form.get('martial_status')
 			marriage_date = request.form['marriage_date']
 			passport_no = request.form['passport']
 			passport_date = request.form['passport_date']
 			pancard_number = request.form['PAN']
-			pan_name = request.form['pan_name']
+			
 			aadhar_no = request.form['aadhar']
-			aadhar_name = request.form['aadhar_name']
+			
 			mobile = request.form['mobile']
 			email = request.form['email']
 			contact_person = request.form['contact_person']
+			contact_person_relation = request.form['contact_person_relation']
 			contact_person_no = request.form['contact_person_no']
 			father_name = request.form['father_name']
 			father_date = request.form['father_date']
@@ -379,11 +399,11 @@ def info():
 			mother_date = request.form['mother_date']
 			address = request.form['address']
 			city = request.form['city']
-			state = request.form['state']
+			state = request.form.get('state')
 			zips = request.form['zip']
 			permanent_address = request.form['permanent_address']
 			pcity = request.form['pcity']
-			pstate = request.form['pstate']
+			pstate = request.form.get('pstate')
 			pzip = request.form['pzip']
 			bank_name = request.form['bank_name']
 			branch = request.form['branch']
@@ -391,17 +411,11 @@ def info():
 			IFSC = request.form['IFSC']
 			OLD_PF = request.form['OLD_PF']
 			OLD_ESIC = request.form['OLD_ESIC']
-			bssc = request.form['bssc']
-			ssc = request.form['ssc']
-			hsc = request.form['hsc']
-			ITI = request.form['ITI']
-			diploma = request.form['diploma']
-			graduate = request.form['graduate']
-			post_graduate = request.form['post_graduate']
-			other = request.form['other']
+			edu = request.form.get('edu')
 			dataa = {
 			'Company Name':c_name,
 			'Employee No':emp_no,
+			'talent':talent,
 			'Date of Joinig':join_date,
 			'Full name':full_name_adhar,
 			'DOB':dob_adhar,
@@ -411,13 +425,14 @@ def info():
 			'Passport No':passport_no,
 			'Passport Expiry':passport_date,
 			'PAN No':pancard_number,
-			'Pan Name':pan_name,
+
 			'aadhar_no':aadhar_no,
-			'Aadhar Name':aadhar_name,
+		
 			'Mobile':mobile,
 			'Email':email,
 			'Contact Person':contact_person,
-			'Contact person no':contact_person_no,
+			'Contact person name':contact_person_no,
+			'Contact person relation':contact_person_relation,
 			'Father name':father_name,
 			'Father DOB':father_date,
 			'Mother name':mother_name,
@@ -436,18 +451,12 @@ def info():
 			'IFSC no':IFSC,
 			'OLD_PF':OLD_PF,
 			'OLD_ESIC':OLD_ESIC,
-			'Below SSC':bssc,
-			'SSC':ssc,
-			'HSC':hsc,
-			'ITI':ITI,
-			'Diploma':diploma,
-			'Graduate':graduate,
-			'Post Graduate':post_graduate,
-			'Other':other,
+			'Education':edu,
 			'adhar_img_front':aadhar_url_front,
 			'adhar_img_back':aadhar_url_back,
 			'proof_img':proof_url,
-			'cheque_img':cheque_url
+			'cheque_img':cheque_url,
+			'degree_url':degree_url
 
 			}
 			FBConn.post('/data_talentsetu/',dataa)
