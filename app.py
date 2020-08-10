@@ -9,23 +9,23 @@ from flask import *
 import pandas as pd
 app = Flask(__name__)
 app.secret_key = "hello"
-
+from PIL import Image
 
 config = {
-	"apiKey": "AIzaSyAYeR8EbGT8o0mkcqpiL6s7PfcCrT2_naA",
-    "authDomain": "sih2020-59356.firebaseapp.com",
-    "databaseURL": "https://sih2020-59356.firebaseio.com",
-    "projectId": "sih2020-59356",
-    "storageBucket": "sih2020-59356.appspot.com",
-    "messagingSenderId": "40198112981",
-    "appId": "1:40198112981:web:8768d7a572404c1b7c845c",
-    "measurementId": "G-2NW3KXNK42",
-    "serviceAccount": "service.json"
+	"apiKey": "AIzaSyDcIab8JfwOMLUdeOIE4n8SpWqW3_S-GVM",
+    "authDomain": "talentsetu-a4710.firebaseapp.com",
+    "databaseURL": "https://talentsetu-a4710.firebaseio.com",
+    "projectId": "talentsetu-a4710",
+    "storageBucket": "talentsetu-a4710.appspot.com",
+    "messagingSenderId": "476128197051",
+    "appId": "1:476128197051:web:4e5f2a6d4520f07d34ec9e",
+    "measurementId": "G-6CRFJBEQGV",
+    "serviceAccount": "services.json"
 }
 
 
 
-FBConn = firebase.FirebaseApplication('https://sih2020-59356.firebaseio.com')
+FBConn = firebase.FirebaseApplication('https://talentsetu-a4710.firebaseio.com/')
 
 firebase = pyrebase.initialize_app(config)
 storage = firebase.storage()
@@ -57,7 +57,10 @@ storage = firebase.storage()
 
 # print(df['description'][0])
 # print(data_text)
-
+# dataaa = {
+# 			'count':int(0)
+# 			}
+# result = FBConn.post('/count_data/', dataaa)
 
 @app.route('/',methods=["GET","POST"])
 def pan():
@@ -145,10 +148,7 @@ def pan():
 			session["father_name"] = father
 			session["pancard_number"] = pan_c
 			session["date_pan"] = datee
-			dataaa = {
-			'count':int(0)
-			}
-			result = FBConn.post('/count_data/', dataaa)
+			
 		elif request.form['upload']=="next":
 			return redirect(url_for('aadhar')) 
 	return render_template('pan.html',a=a,name=name_of_person,father=father,pancard = pan_c,datee=date)
@@ -288,13 +288,20 @@ def info():
 	if request.method == "POST":
 		if request.form['upload']=="Upload":
 			uploaddd = request.files['files']
-			spl = uploaddd.filename
-			spll = spl.split(".")
-			uploaddd.filename=str(da)+"Aadhar_Front"+"."+spll[1]
-			filena = secure_filename(uploaddd.filename)
-			print(filena)
-			uploaddd.save(os.path.join(app.config['uploads'], filena))
-			storage.child(filena).put(filena)
+			foo = Image.open(uploaddd)
+			foo = foo.resize((300,300),Image.ANTIALIAS)
+			print(foo)
+			foo.save('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Aadhar_Front.jpg',optimize=True,quality=95)
+			# spl = os.path.basename('E:\PROJECT\\aadhar_OCR\\'+str(da)+'ima.jpg')
+			# print(spl)
+			# spll = spl.split(".")
+			# data_name=str(da)+"Aadhar_Front"+"."+spll[1]
+			# filena = secure_filename(data_name)
+			# print(filena)
+
+			# uploaddd.save(os.path.join(app.config['uploads'], filena))
+			storage.child(str(da)+'Aadhar_Front.jpg').put('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Aadhar_Front.jpg')
+			filena = str(da)+'Aadhar_Front.jpg'
 			# storage = firebase.storage()
 			data_a = filena.split(".")
 			files = storage.list_files()
@@ -304,17 +311,24 @@ def info():
 					data_url = storage.child(file.name).get_url(None)
 					aadhar_url_front = data_url
 
+
 			uploa = request.files['fil']
-			spl = uploa.filename
-			spll = spl.split(".")
-			uploa.filename=str(da)+"Aadhar_Back"+"."+spll[1]
-			filenam = secure_filename(uploa.filename)
-			print(filenam)
-			uploa.save(os.path.join(app.config['uploads'], filenam))
-			
-			storage.child(filenam).put(filenam)
+			foos = Image.open(uploa)
+			foos = foos.resize((300,300),Image.ANTIALIAS)
+			print(foos)
+			foos.save('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Aadhar_Back.jpg',optimize=True,quality=95)
+			# spl = os.path.basename('E:\PROJECT\\aadhar_OCR\\'+str(da)+'ima.jpg')
+			# print(spl)
+			# spll = spl.split(".")
+			# data_name=str(da)+"Aadhar_Front"+"."+spll[1]
+			# filena = secure_filename(data_name)
+			# print(filena)
+
+			# uploaddd.save(os.path.join(app.config['uploads'], filena))
+			storage.child(str(da)+'Aadhar_Back.jpg').put('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Aadhar_Back.jpg')
+			filena = str(da)+'Aadhar_Back.jpg'
 			# storage = firebase.storage()
-			data_a = filenam.split(".")
+			data_a = filena.split(".")
 			files = storage.list_files()
 			for file in files:
 				word=storage.child(file.name).get_url(None)
@@ -323,32 +337,46 @@ def info():
 					aadhar_url_back = data_url
 
 			uploads = request.files['filess']
-			spl = uploads.filename
-			print(spl)
-			spll = spl.split(".")
-			uploads.filename=str(da)+"Proof"+"."+spll[1]
-			filenames = secure_filename(uploads.filename)
-			print(filenames)
-			uploads.save(os.path.join(app.config['uploads'], filenames))
-			storage.child(filenames).put(filenames)
+			fooss = Image.open(uploads)
+			fooss = fooss.resize((300,300),Image.ANTIALIAS)
+			print(fooss)
+			fooss.save('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Proof.jpg',optimize=True,quality=95)
+			# spl = os.path.basename('E:\PROJECT\\aadhar_OCR\\'+str(da)+'ima.jpg')
+			# print(spl)
+			# spll = spl.split(".")
+			# data_name=str(da)+"Aadhar_Front"+"."+spll[1]
+			# filena = secure_filename(data_name)
+			# print(filena)
+
+			# uploaddd.save(os.path.join(app.config['uploads'], filena))
+			storage.child(str(da)+'Proof.jpg').put('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Proof.jpg')
+			filena = str(da)+'Proof.jpg'
 			# storage = firebase.storage()
-			data_a = filenames.split(".")
+			data_a = filena.split(".")
 			files = storage.list_files()
 			for file in files:
 				word=storage.child(file.name).get_url(None)
 				if (word.find(data_a[0]) != -1): 
 					data_url = storage.child(file.name).get_url(None)
 					proof_url = data_url
+
 			uploadss = request.files['uploadsss']
-			spl = uploadss.filename
-			spll = spl.split(".")
-			uploadss.filenamess=str(da)+"cheque"+"."+spll[1]
-			filenamess = secure_filename(uploadss.filenamess)
-			print(filenamess)
-			uploadss.save(os.path.join(app.config['uploads'], filenamess))
-			storage.child(filenamess).put(filenamess)
+			foosss = Image.open(uploadss)
+			foosss = foosss.resize((300,300),Image.ANTIALIAS)
+			print(foosss)
+			foosss.save('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Cheque.jpg',optimize=True,quality=95)
+			# spl = os.path.basename('E:\PROJECT\\aadhar_OCR\\'+str(da)+'ima.jpg')
+			# print(spl)
+			# spll = spl.split(".")
+			# data_name=str(da)+"Aadhar_Front"+"."+spll[1]
+			# filena = secure_filename(data_name)
+			# print(filena)
+
+			# uploaddd.save(os.path.join(app.config['uploads'], filena))
+			storage.child(str(da)+'Cheque.jpg').put('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Cheque.jpg')
+			filena = str(da)+'Cheque.jpg'
 			# storage = firebase.storage()
-			data_a = filenamess.split(".")
+			data_a = filena.split(".")
 			files = storage.list_files()
 			for file in files:
 				word=storage.child(file.name).get_url(None)
@@ -357,21 +385,96 @@ def info():
 					cheque_url = data_url
 
 			upl = request.files['upl']
-			spl = upl.filename
-			spll = spl.split(".")
-			upl.filenamesss=str(da)+"degree"+"."+spll[1]
-			filenamesss = secure_filename(upl.filenamesss)
-			print(filenamesss)
-			upl.save(os.path.join(app.config['uploads'], filenamesss))
-			storage.child(filenamesss).put(filenamesss)
+			foossss = Image.open(upl)
+			foossss = foossss.resize((300,300),Image.ANTIALIAS)
+			print(foossss)
+			foossss.save('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Degree.jpg',optimize=True,quality=95)
+			# spl = os.path.basename('E:\PROJECT\\aadhar_OCR\\'+str(da)+'ima.jpg')
+			# print(spl)
+			# spll = spl.split(".")
+			# data_name=str(da)+"Aadhar_Front"+"."+spll[1]
+			# filena = secure_filename(data_name)
+			# print(filena)
+
+			# uploaddd.save(os.path.join(app.config['uploads'], filena))
+			storage.child(str(da)+'Degree.jpg').put('E:\PROJECT\\aadhar_OCR\\'+str(da)+'Degree.jpg')
+			filena = str(da)+'Degree.jpg'
 			# storage = firebase.storage()
-			data_a = filenamesss.split(".")
+			data_a = filena.split(".")
 			files = storage.list_files()
 			for file in files:
 				word=storage.child(file.name).get_url(None)
 				if (word.find(data_a[0]) != -1): 
 					data_url = storage.child(file.name).get_url(None)
-					degree_url = data_url
+					degree_url= data_url
+			# uploa = request.files['fil']
+			# spl = uploa.filename
+			# spll = spl.split(".")
+			# uploa.filename=str(da)+"Aadhar_Back"+"."+spll[1]
+			# filenam = secure_filename(uploa.filename)
+			# print(filenam)
+			# uploa.save(os.path.join(app.config['uploads'], filenam))
+			
+			# storage.child(filenam).put(filenam)
+			# # storage = firebase.storage()
+			# data_a = filenam.split(".")
+			# files = storage.list_files()
+			# for file in files:
+			# 	word=storage.child(file.name).get_url(None)
+			# 	if (word.find(data_a[0]) != -1): 
+			# 		data_url = storage.child(file.name).get_url(None)
+			# 		aadhar_url_back = data_url
+
+			# uploads = request.files['filess']
+			# spl = uploads.filename
+			# print(spl)
+			# spll = spl.split(".")
+			# uploads.filename=str(da)+"Proof"+"."+spll[1]
+			# filenames = secure_filename(uploads.filename)
+			# print(filenames)
+			# uploads.save(os.path.join(app.config['uploads'], filenames))
+			# storage.child(filenames).put(filenames)
+			# # storage = firebase.storage()
+			# data_a = filenames.split(".")
+			# files = storage.list_files()
+			# for file in files:
+			# 	word=storage.child(file.name).get_url(None)
+			# 	if (word.find(data_a[0]) != -1): 
+			# 		data_url = storage.child(file.name).get_url(None)
+			# 		proof_url = data_url
+			# uploadss = request.files['uploadsss']
+			# spl = uploadss.filename
+			# spll = spl.split(".")
+			# uploadss.filenamess=str(da)+"cheque"+"."+spll[1]
+			# filenamess = secure_filename(uploadss.filenamess)
+			# print(filenamess)
+			# uploadss.save(os.path.join(app.config['uploads'], filenamess))
+			# storage.child(filenamess).put(filenamess)
+			# # storage = firebase.storage()
+			# data_a = filenamess.split(".")
+			# files = storage.list_files()
+			# for file in files:
+			# 	word=storage.child(file.name).get_url(None)
+			# 	if (word.find(data_a[0]) != -1): 
+			# 		data_url = storage.child(file.name).get_url(None)
+			# 		cheque_url = data_url
+
+			# upl = request.files['upl']
+			# spl = upl.filename
+			# spll = spl.split(".")
+			# upl.filenamesss=str(da)+"degree"+"."+spll[1]
+			# filenamesss = secure_filename(upl.filenamesss)
+			# print(filenamesss)
+			# upl.save(os.path.join(app.config['uploads'], filenamesss))
+			# storage.child(filenamesss).put(filenamesss)
+			# # storage = firebase.storage()
+			# data_a = filenamesss.split(".")
+			# files = storage.list_files()
+			# for file in files:
+			# 	word=storage.child(file.name).get_url(None)
+			# 	if (word.find(data_a[0]) != -1): 
+			# 		data_url = storage.child(file.name).get_url(None)
+			# 		degree_url = data_url
 
 			c_name = request.form['cname']
 			emp_no = request.form['emp']
